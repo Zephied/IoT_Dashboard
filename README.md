@@ -47,16 +47,26 @@ Tableau de bord IoT pour la découverte, la visualisation et le contrôle des ob
 
 ## Structure du projet
 ```
-backend/
-  main.go           # Point d'entrée Go (API + serveur fichiers statiques)
-  api/              # Handlers API, actions, mock
-  db/               # Accès base SQLite
-  models/           # Modèles Go
-  scanner/          # Scan réseau (Nmap)
-frontend/
-  index.html        # Interface utilisateur
-  script.js         # Logique frontend
-  style.css         # Styles
+iot-dashboard/
+├── backend/                         # Backend Go (API, scan, base)
+│   ├── main.go                      # Point d'entrée Go, serveur HTTP/API
+│   ├── api/                         # Handlers API, logique métier
+│   │   ├── actions.go               # Exécution des actions sur les devices
+│   │   ├── handlers.go              # Handlers HTTP (routes, scan, CRUD)
+│   │   └── mock.go                  # Handler pour ajouter le mock caméra
+│   ├── db/                          # Accès base SQLite
+│   │   └── db.go                    # Fonctions d'accès et gestion de la base
+│   ├── models/                      # Modèles de données Go
+│   │   └── device.go                # Structure Device (objets connectés)
+│   └── scanner/                     # Scan réseau (Nmap)
+│       └── nmap.go                  # Scan réseau via la lib Nmap
+├── frontend/                        # Frontend web (HTML/CSS/JS)
+│   ├── index.html                   # Page principale de l'interface
+│   ├── script.js                    # Logique JS (UI, actions, requêtes)
+│   └── style.css                    # Styles CSS
+├── go.mod                           # Dépendances Go
+├── go.sum                           # Hashes des dépendances Go
+└── README.md                        # Documentation du projet
 ```
 
 ## Notes
