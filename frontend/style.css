@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    background: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#device-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.device-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    user-select: none;
+    position: relative;
+}
+
+.device-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.device-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.device-icon {
+    font-size: 2.5rem;
+}
+
+.device-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-grow: 1;
+}
+
+.device-info {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.25rem;
+}
+
+.actions {
+    margin-top: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.actions button {
+    padding: 0.5rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.actions button:hover {
+    background-color: #0056b3;
+}
+
+.device-card.expanded .actions {
+    display: flex;
+}
