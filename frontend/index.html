@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>IoT Dashboard - Cartes</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>IoT Dashboard</h1>
+  <button onclick="scanNetwork()">Scanner le réseau</button>
+  <button onclick="addMockDevice()">Ajouter un mock (fonction de développement) </button>
+  
+  <div id="device-container"></div>
+
+  <video id="localCam" autoplay playsinline style="width: 400px; border: 1px solid #ccc; margin-top: 1rem; display: none;"></video>
+</body>
+</html>
